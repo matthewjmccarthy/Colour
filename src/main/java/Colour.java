@@ -1,3 +1,5 @@
+import org.jetbrains.annotations.NotNull;
+
 import static java.lang.Math.abs;
 
 public class Colour {
@@ -28,7 +30,7 @@ public class Colour {
     public float getGreen() { return this.green_value; }
     public float getBlue() { return this.blue_value; }
 
-    public boolean equals(Colour other) {
+    public boolean equals(@NotNull Colour other) {
         // Test if red, green and blue values are within 0.002. True equality will not work between Colour objects created by seperate
         // constructors due to remainders from dividing by 255.
         return (abs(this.red_value - other.red_value) < 0.002) && (abs(this.green_value - other.green_value) < 0.002) && (abs(this.blue_value - other.blue_value) < 0.002);
