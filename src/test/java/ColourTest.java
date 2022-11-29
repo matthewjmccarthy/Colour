@@ -28,4 +28,13 @@ public class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour(-1.0f, 1.2f, 100.0f)); // 2nd value of assertThrows must be an Executable. Anonymous
                                                                                                             // lambda functions provide this functionality.
     }
+
+    @Test
+    @DisplayName("Test of the single parameter Colour constructor.")
+    public void test1ValueColourConstructor() {
+        Colour colour = new Colour(0x00ffff); // red = 0.0f, green = 1.0f, blue = 1.0f
+        assertEquals(0.0f, colour.getRed(), 0.0);
+        assertEquals(1.0f, colour.getGreen(), 0.0);
+        assertEquals(1.0f, colour.getBlue(), 0.0);
+    }
 }

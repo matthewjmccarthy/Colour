@@ -13,6 +13,9 @@ public class Colour {
         this.green_value = green;
         this.blue_value = blue;
     }
+
+    public Colour(int rgb) {}
+
     public float getRed() { return this.red_value; }
     public float getGreen() { return this.green_value; }
     public float getBlue() { return this.blue_value; }
