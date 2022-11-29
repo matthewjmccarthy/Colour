@@ -42,8 +42,8 @@ public class ColourTest {
     @DisplayName("Second test of the single parameter Colour constructor.")
     public void test1ValueColourConstructor2() {
         Colour colour = new Colour(0xff4000); // red = 1.0f, green = 0.25f, blue = 0.0f
-        assertEquals(1.0f, colour.getRed(), 0.0);
-        assertEquals(0.25f, colour.getGreen(), 0.0);
-        assertEquals(0.0f, colour.getBlue(), 0.0);
+        assertEquals(1.0f, colour.getRed(), 0.01); // Added small error tolerance to account for HEX -> DEC conversion and division by 255.
+        assertEquals(0.25f, colour.getGreen(), 0.01);
+        assertEquals(0.0f, colour.getBlue(), 0.01);
     }
 }

@@ -15,9 +15,9 @@ public class Colour {
     }
 
     public Colour(int rgb) {
-        this.red_value = 0.0f;
-        this.green_value = 1.0f;
-        this.blue_value = 1.0f;
+        this.red_value = ((rgb >> 16) & 0xff) / 255f;
+        this.green_value = ((rgb >> 8) & 0xff) /255f;
+        this.blue_value = (rgb & 0xff) / 255f;
     }
 
     public float getRed() { return this.red_value; }
