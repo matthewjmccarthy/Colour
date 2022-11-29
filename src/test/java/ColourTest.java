@@ -80,4 +80,11 @@ public class ColourTest {
 
         assertTrue(colour1.equals(colour2));
     }
+
+    @Test
+    public void testNullValueEquals() {
+        Colour colour = new Colour(0.25f, 0.25f, 0.25f);
+
+        assertThrows(IllegalArgumentException.class, () -> colour.equals(null));
+    }
 }
