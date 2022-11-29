@@ -71,4 +71,13 @@ public class ColourTest {
 
         assertTrue(colour1.equals(colour2));
     }
+
+    @Test
+    @DisplayName("Test if equals() is accurate between Colour objects created with different class constructors.")
+    public void testEqualityBetweenDifferentConstructors() {
+        Colour colour1 = new Colour(0x404040); // red = 0.25f, green = 0.25f, blue = 0.25f
+        Colour colour2 = new Colour(0.25f, 0.25f, 0.25f);
+
+        assertTrue(colour1.equals(colour2));
+    }
 }
