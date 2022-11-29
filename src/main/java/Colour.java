@@ -4,6 +4,11 @@ public class Colour {
     float blue_value;
 
     public Colour(float red, float green, float blue) {
+        if ((red < 0.0f || red > 1.0f) ||
+            (green < 0.0f || green > 1.0f) ||
+            (blue < 0.0f || blue > 1.0f)) {
+            throw new IllegalArgumentException("RGB values must be in the range [0.0 - 1.0]");
+        }
         this.red_value = red;
         this.green_value = green;
         this.blue_value = blue;
