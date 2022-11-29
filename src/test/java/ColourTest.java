@@ -62,4 +62,13 @@ public class ColourTest {
 
         assertFalse(colour1.equals(colour2));
     }
+
+    @Test
+    @DisplayName("Second test of equals() method.")
+    public void testColourEquals2() {
+        Colour colour1 = new Colour(0.3f, 0.4f, 0.7f);
+        Colour colour2 = new Colour(0.3f, 0.4f, 0.7f);
+
+        assertTrue(colour1.equals(colour2));
+    }
 }
