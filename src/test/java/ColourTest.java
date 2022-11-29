@@ -46,4 +46,11 @@ public class ColourTest {
         assertEquals(0.25f, colour.getGreen(), 0.01);
         assertEquals(0.0f, colour.getBlue(), 0.01);
     }
+
+    @Test
+    @DisplayName("Test to see if hexadecimal values too large or too small for constructor are caught.")
+    public void test1ValueOutOfBounds() {
+        assertThrows(IllegalArgumentException.class, () -> new Colour(0xfffffff)); // Value too large
+        assertThrows(IllegalArgumentException.class, () -> new Colour(-0x0f00ad)); // Value too small
+    }
 }
