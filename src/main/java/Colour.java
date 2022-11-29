@@ -26,5 +26,7 @@ public class Colour {
     public float getGreen() { return this.green_value; }
     public float getBlue() { return this.blue_value; }
 
-    public boolean equals(Object other) { return false; }
+    public boolean equals(Colour other) {
+        return (this.red_value == other.red_value) && (this.green_value == other.green_value) && (this.blue_value == other.blue_value);
+    }
 }
