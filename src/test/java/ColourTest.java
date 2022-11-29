@@ -21,4 +21,11 @@ public class ColourTest {
         assertEquals(0.5f, colour.getGreen(), 0.0);
         assertEquals(1.0f, colour.getBlue(), 0.0);
     }
+
+    @Test
+    @DisplayName("Test to catch values entered into constructor that are too large or too small.")
+    public void test3ValueOutOfBounds() {
+        assertThrows(IllegalArgumentException.class, () -> new Colour(-1.0f, 1.2f, 100.0f)); // 2nd value of assertThrows must be an Executable. Anonymous
+                                                                                                            // lambda functions provide this functionality.
+    }
 }
