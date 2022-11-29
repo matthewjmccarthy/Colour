@@ -1,3 +1,5 @@
+import static java.lang.Math.abs;
+
 public class Colour {
     float red_value;
     float green_value;
@@ -27,6 +29,8 @@ public class Colour {
     public float getBlue() { return this.blue_value; }
 
     public boolean equals(Colour other) {
-        return (this.red_value == other.red_value) && (this.green_value == other.green_value) && (this.blue_value == other.blue_value);
+        // Test if red, green and blue values are within 0.002. True equality will not work between Colour objects created by seperate
+        // constructors due to remainders from dividing by 255.
+        return (abs(this.red_value - other.red_value) < 0.002) && (abs(this.green_value - other.green_value) < 0.002) && (abs(this.blue_value - other.blue_value) < 0.002);
     }
 }
