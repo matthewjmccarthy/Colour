@@ -15,6 +15,8 @@ public class Colour {
     }
 
     public Colour(int rgb) {
+        if (rgb < 0x000000 ||rgb > 0xffffff) { throw new IllegalArgumentException("RGB value must be in the range [0x000000 - 0xffffff]"); }
+
         this.red_value = ((rgb >> 16) & 0xff) / 255f;
         this.green_value = ((rgb >> 8) & 0xff) /255f;
         this.blue_value = (rgb & 0xff) / 255f;
