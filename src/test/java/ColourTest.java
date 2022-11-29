@@ -53,4 +53,13 @@ public class ColourTest {
         assertThrows(IllegalArgumentException.class, () -> new Colour(0xfffffff)); // Value too large
         assertThrows(IllegalArgumentException.class, () -> new Colour(-0x0f00ad)); // Value too small
     }
+
+    @Test
+    @DisplayName("Test of equals() method.")
+    public void testColourEquals() {
+        Colour colour1 = new Colour(1.0f, 1.0f, 0.3f);
+        Colour colour2 = new Colour(0.2f, 0.78f, 0.5f);
+
+        assertFalse(colour1.equals(colour2));
+    }
 }
